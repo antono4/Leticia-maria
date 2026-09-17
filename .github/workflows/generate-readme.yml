@@ -6,7 +6,7 @@ permissions:
 on:
   schedule:
     # setiap 10 menit
-    - cron: '4-59/10 * * * *'
+    - cron: '8-59/10 * * * *'
   push:
     branches:
       - main
