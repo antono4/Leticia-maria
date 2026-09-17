@@ -5,8 +5,8 @@ permissions:
 
 on:
   schedule:
-    # setiap 10 menit
-    - cron: '4-59/10 * * * *'
+    # Setiap 30 menit, offset 8 (menit 08 dan 38).
+    - cron: '8-59/30 * * * *'
   push:
     branches:
       - main
@@ -22,7 +22,8 @@ on:
         default: 'true'
 
 concurrency:
-  group: generate-readme
+  # Disatukan ke grup yang sama dengan C1/C2/C3/auto-update agar tidak saling menimpa README.
+  group: readme-updater
   cancel-in-progress: false
 
 jobs:
